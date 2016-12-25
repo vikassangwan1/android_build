@@ -37,8 +37,8 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     PhotoTable
 
-ifeq ($(AOSP_SOUND_CONFIG),true)
 # Additional settings used in all AOSP builds
+ifeq ($(wildcard vendor/pixelstyle/google/GoogleAudio.mk),)
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.config.ringtone=Ring_Synth_04.ogg \
     ro.config.notification_sound=pixiedust.ogg
@@ -48,7 +48,9 @@ endif
 PRODUCT_LOCALES := en_US
 
 # Get some sounds
+ifeq ($(wildcard vendor/pixelstyle/google/GoogleAudio.mk),)
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+endif
 
 # Get the TTS language packs
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
