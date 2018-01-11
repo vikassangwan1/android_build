@@ -75,6 +75,7 @@ LOCAL_CLANG_EXCEPTION_PROJECTS = \
   device/huawei/angler/ \
   device/lge/bullhead/ \
   external/busybox/ \
+  external/bash/ \
   external/gentoo/integration/ \
   hardware/qcom/ \
   test/vts/hals/camera/bullhead/ \
