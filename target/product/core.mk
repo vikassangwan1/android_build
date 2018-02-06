@@ -40,7 +40,7 @@ PRODUCT_PACKAGES += \
     KeyChain \
     Keyguard \
     LatinIME \
-    PixelLauncher \
+    Launcher3 \
     ManagedProvisioning \
     MtpDocumentsProvider \
     PicoTts \
