@@ -489,17 +489,18 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
 
-  script.Print("#######################################");
-  script.Print("# _____            __  __  ______     #");
-  script.Print("#/\  __`\  /'\_/`\/\ \/\ \/\__  _\    #");
-  script.Print("#\ \ \/\ \/\  ``  \ \ ` \ \/_/\ \/    #");
-  script.Print("# \ \ \ \ \ \ \__\ \ \ . ` \ \ \ \    #");
-  script.Print("#  \ \ \_\ \ \ \_/\ \ \ \`\ \ \_\ \__ #");
-  script.Print("#   \ \_____\ \_\, \_\ \_\ \_\/\_____\#");
-  script.Print("#    \/_____/\/_/ \/_/\/_/\/_/\/_____/#");
-  script.Print("#                                     #");
-  script.Print("#              Tresk Mod              #");
-  script.Print("#######################################");
+  script.Print("##########################################");
+  script.Print("#      ____   __   _  _  ____  __        #");
+  script.Print("#     (  _ \ (  ) ( \/ )(  __)(  )       #");
+  script.Print("#      ) __/  )(   )  (  ) _) / (_/\     #");
+  script.Print("#     (__)   (__) (_/\_)(____)\____/     #");
+  script.Print("#    __   ____  ____   __    ___  ____   #");
+  script.Print("#   / _\ (    \(    \ (  )  / __)(_  _)  #");
+  script.Print("#  /    \ ) D ( ) D (  )(  ( (__   )(    #");
+  script.Print("#  \_/\_/(____/(____/ (__)  \___) (__)   #");
+  script.Print("#                                        #");    
+  script.Print("#              Based on Omni             #");                                                        
+  script.Print("##########################################");                                                        
 
   if OPTIONS.backuptool:
     script.Print("Backup");
