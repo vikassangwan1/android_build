@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
     LiveWallpapers \
+    LiveWallpapersPicker \
     MagicSmokeWallpapers \
     NoiseField \
     PhaseBeam \
