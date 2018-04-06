@@ -70,7 +70,6 @@ PRODUCT_PACKAGES += \
     logcat \
     logwrapper \
     lshal \
-    recovery \
     service \
     servicemanager \
     shell_and_utilities \
