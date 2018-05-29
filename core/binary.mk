@@ -416,9 +416,7 @@ endif
 ifeq ($(SDCLANG),true)
     ifeq ($(my_sdclang),)
         ifneq ($(my_sdclang_2),true)
-            ifeq ($(TARGET_USE_SDCLANG),true)
-                my_sdclang := true
-            endif
+            my_sdclang := true
         endif
     endif
 endif
