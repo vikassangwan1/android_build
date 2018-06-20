@@ -640,7 +640,6 @@ $(full_classes_proguard_jar) : $(link_instr_intermediates_dir.COMMON)/proguard.c
 
 endif # no obfuscation
 endif # LOCAL_INSTRUMENTATION_FOR
-endif  # LOCAL_PROGUARD_ENABLED is not nosystem
 
 proguard_flag_files := $(addprefix $(LOCAL_PATH)/, $(LOCAL_PROGUARD_FLAG_FILES))
 ifeq ($(USE_R8),true)
