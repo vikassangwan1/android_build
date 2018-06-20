@@ -80,7 +80,7 @@ POLLY := -O3 -mllvm -polly \
 
 # Disable modules that dont work with Polly.
 DISABLE_POLLY_arm :=
-DISABLE_POLLY_arm64 :=
+DISABLE_POLLY_arm64 := libjni_filtershow_filters libntfs-3g
 
 # Set DISABLE_POLLY based on arch
 DISABLE_POLLY := \
