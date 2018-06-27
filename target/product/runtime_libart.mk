@@ -81,7 +81,7 @@ endif
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     pm.dexopt.install=quicken \
-    pm.dexopt.bg-dexopt=speed-profile \
-    pm.dexopt.ab-ota=speed-profile \
+    pm.dexopt.bg-dexopt=speed \
+    pm.dexopt.ab-ota=speed \
     pm.dexopt.inactive=verify \
     pm.dexopt.shared=speed
