@@ -1,5 +1,11 @@
 # Put some miscellaneous rules here
 
+# Colors for logo
+CL_GRN="\033[32m"
+CL_CYN="\033[36m"
+CL_BNK=""
+CL_RST="\033[0m"
+
 # HACK: clear LOCAL_PATH from including last build target before calling
 # intermedites-dir-for
 LOCAL_PATH := $(BUILD_SYSTEM)
@@ -2777,8 +2783,24 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: otapackage
+CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/omnikang-$(ROM_VERSION).zip
+
+.PHONY: otapackage omnikang
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+omnikang: otapackage
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
+	@echo -e ${CL_BNK}""${CL_BNK}
+	@echo -e ${CL_CYN}" ▒█████   ███▄ ▄███▓ ███▄    █  ██▓    ██ ▄█▀▄▄▄       ███▄    █   ▄████ "${CL_RST}
+	@echo -e ${CL_CYN}"▒██▒  ██▒▓██▒▀█▀ ██▒ ██ ▀█   █ ▓██▒    ██▄█▒▒████▄     ██ ▀█   █  ██▒ ▀█▒"${CL_RST}
+	@echo -e ${CL_CYN}"▒██░  ██▒▓██    ▓██░▓██  ▀█ ██▒▒██▒   ▓███▄░▒██  ▀█▄  ▓██  ▀█ ██▒▒██░▄▄▄░"${CL_RST}
+	@echo -e ${CL_CYN}"▒██   ██░▒██    ▒██ ▓██▒  ▐▌██▒░██░   ▓██ █▄░██▄▄▄▄██ ▓██▒  ▐▌██▒░▓█  ██▓"${CL_RST}
+	@echo -e ${CL_CYN}"░ ████▓▒░▒██▒   ░██▒▒██░   ▓██░░██░   ▒██▒ █▄▓█   ▓██▒▒██░   ▓██░░▒▓███▀▒"${CL_RST}
+	@echo -e ${CL_CYN}"░ ▒░▒░▒░ ░ ▒░   ░  ░░ ▒░   ▒ ▒ ░▓     ▒ ▒▒ ▓▒▒▒   ▓▒█░░ ▒░   ▒ ▒  ░▒   ▒ "${CL_RST}
+	@echo -e ${CL_CYN}"  ░ ▒ ▒░ ░  ░      ░░ ░░   ░ ▒░ ▒ ░   ░ ░▒ ▒░ ▒   ▒▒ ░░ ░░   ░ ▒░  ░   ░ "${CL_RST}
+	@echo -e ${CL_CYN}"░ ░ ░ ▒  ░      ░      ░   ░ ░  ▒ ░   ░ ░░ ░  ░   ▒      ░   ░ ░ ░ ░   ░ "${CL_RST}
+	@echo -e ${CL_CYN}"  ░ ░           ░            ░  ░     ░  ░        ░  ░         ░       ░ "${CL_RST}
+	@echo -e ${CL_GRN}"ROM is ready!!:"${CL_RST}" $(CUSTOM_TARGET_PACKAGE)"
 
 endif    # build_ota_package
 
