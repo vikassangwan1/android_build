@@ -493,18 +493,20 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
-
-  script.Print("#######################################");
-  script.Print("# _____            __  __  ______     #");
-  script.Print("#/\  __`\  /'\_/`\/\ \/\ \/\__  _\    #");
-  script.Print("#\ \ \/\ \/\  ``  \ \ ` \ \/_/\ \/    #");
-  script.Print("# \ \ \ \ \ \ \__\ \ \ . ` \ \ \ \    #");
-  script.Print("#  \ \ \_\ \ \ \_/\ \ \ \`\ \ \_\ \__ #");
-  script.Print("#   \ \_____\ \_\, \_\ \_\ \_\/\_____\#");
-  script.Print("#    \/_____/\/_/ \/_/\/_/\/_/\/_____/#");
-  script.Print("#                                     #");
-  script.Print("#              Tresk Mod              #");
-  script.Print("#######################################");
+  
+  script.Print("   ____                  _ ");
+  script.Print("  / __ \                (_)");
+  script.Print(" | |  | |_ __ ___  _ __  _ ");
+  script.Print(" | |  | | '_ ` _ \| '_ \| |");
+  script.Print(" | |__| | | | | | | | | | |");
+  script.Print("  \____/|_| |_| |_|_| |_|_|");
+  script.Print(" | |/ /                    ");
+  script.Print(" | ' / __ _ _ __   __ _    ");
+  script.Print(" |  < / _` | '_ \ / _` |   ");
+  script.Print(" | . \ (_| | | | | (_| |   ");
+  script.Print(" |_|\_\__,_|_| |_|\__, |   ");
+  script.Print("                   __/ |   ");
+  script.Print("                  |___/    ");
 
   if OPTIONS.backuptool:
     script.Print("Backup");
